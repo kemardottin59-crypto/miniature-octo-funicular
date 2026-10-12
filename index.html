@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartDeals Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f5f9;
+      color: #172033;
+    }
+    header {
+      background: #10264d;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+    header h1 { margin: 0 0 10px; }
+    header p { margin-bottom: 0; }
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 20px;
+    }
+    .search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .deal {
+      background: white;
+      padding: 20px;
+      margin: 16px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #00000010;
+    }
+    .deal h2 { color: #10264d; }
+    .deal a {
+      display: inline-block;
+      background: #087f5b;
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 7px;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SmartDeals Hub</h1>
+    <p>Discover great deals and shop smarter!</p>
+  </header>
+
+  <main class="container">
+    <h2>Find Your Next Great Deal</h2>
+    <input class="search" id="search"
+      placeholder="Search deals..."
+      oninput="filterDeals()">
+
+    <section id="deals">
+      <article class="deal">
+        <h2>Tech & Electronics</h2>
+        <p>Explore phones, headphones, accessories and more.</p>
+        <a href="https://www.amazon.com/" target="_blank"
+          rel="noopener">Explore Products</a>
+      </article>
+
+      <article class="deal">
+        <h2>Home & Living</h2>
+        <p>Find useful items for your home and everyday life.</p>
+        <a href="https://www.amazon.com/" target="_blank"
+          rel="noopener">Shop Home Deals</a>
+      </article>
+
+      <article class="deal">
+        <h2>Fashion & Accessories</h2>
+        <p>Discover clothing, bags, watches and accessories.</p>
+        <a href="https://www.amazon.com/" target="_blank"
+          rel="noopener">Explore Fashion</a>
+      </article>
+
+      <article class="deal">
+        <h2>Everyday Essentials</h2>
+        <p>Browse useful products for daily living.</p>
+        <a href="https://www.amazon.com/" target="_blank"
+          rel="noopener">Browse Essentials</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>SmartDeals Hub | Shop smarter, every day.</p>
+    <p>Some links may become affiliate links. We may earn a
+    commission from qualifying purchases.</p>
+  </footer>
+
+  <script>
+    function filterDeals() {
+      const query = document.getElementById('search')
+        .value.toLowerCase();
+      document.querySelectorAll('.deal').forEach(deal => {
+        deal.style.display = deal.innerText.toLowerCase()
+          .includes(query) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>  
