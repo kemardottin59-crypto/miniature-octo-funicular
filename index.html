@@ -2,116 +2,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartDeals Hub</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6fb;
-      color: #172033;
-    }
-    header {
-      background: #102b50;
-      color: white;
-      text-align: center;
-      padding: 28px 16px;
-    }
-    header h1 { margin: 0 0 8px; }
-    header p { margin: 0; }
-    .search {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ccd4df;
-      border-radius: 10px;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    main { max-width: 850px; margin: auto; padding: 20px; }
-    .intro {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 22px;
-    }
-    .deals {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px #102b5010;
-    }
-    .emoji { font-size: 38px; }
-    .card a {
-      display: inline-block;
-      background: #1265d8;
-      color: white;
-      padding: 11px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    .note { font-size: 13px; color: #5c6677; }
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #5c6677;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartDeals Hub</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+}
+header {
+  background: #123c69;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+}
+header h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+}
+header p {
+  margin: 0;
+}
+.search {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  margin: 22px auto;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 15px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 12px #00000010;
+}
+.emoji {
+  font-size: 45px;
+}
+.card h2 {
+  color: #123c69;
+}
+.card p {
+  line-height: 1.5;
+}
+button {
+  background: #087f5b;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 18px;
+  font-size: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background: #066747;
+}
+footer {
+  background: #123c69;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>🛍️ SmartDeals Hub</h1>
-    <p>Discover smart finds and great deals!</p>
-  </header>
-  <main>
-    <section class="intro">
-      <h2>Welcome to SmartDeals Hub</h2>
-      <p>Explore useful products, compare your options, and find deals that fit your budget.</p>
-      <input class="search" id="search" placeholder="Search products..." aria-label="Search products">
-    </section>
-    <section class="deals" id="deals">
-      <article class="card">
-        <div class="emoji">🎧</div>
-        <h3>Headphones & Audio</h3>
-        <p>Discover headphones and accessories for everyday listening.</p>
-        <a href="https://www.amazon.com/" target="_blank" rel="noopener">Explore products</a>
-      </article>
-      <article class="card">
-        <div class="emoji">🏠</div>
-        <h3>Home Essentials</h3>
-        <p>Find handy items to make your home more comfortable.</p>
-        <a href="https://www.amazon.com/" target="_blank" rel="noopener">Explore products</a>
-      </article>
-      <article class="card">
-        <div class="emoji">📱</div>
-        <h3>Phone Accessories</h3>
-        <p>Browse accessories for your phone and everyday tech.</p>
-        <a href="https://www.amazon.com/" target="_blank" rel="noopener">Explore products</a>
-      </article>
-      <article class="card">
-        <div class="emoji">💪</div>
-        <h3>Fitness Finds</h3>
-        <p>Explore equipment and accessories for active living.</p>
-        <a href="https://www.amazon.com/" target="_blank" rel="noopener">Explore products</a>
-      </article>
-    </section>
-    <p class="note">SmartDeals Hub may earn a commission from qualifying purchases once affiliate links are added. Product links on this starter page are not affiliate links.</p>
-  </main>
-  <footer>© 2026 SmartDeals Hub</footer>
-  <script>
-    const search = document.getElementById("search");
-    const cards = document.querySelectorAll(".card");
-    search.addEventListener("input", function () {
-      cards.forEach(function (card) {
-        card.style.display = card.innerText.toLowerCase().includes(search.value.toLowerCase()) ? "" : "none";
-      });
-    });
-  </script>
+
+<header>
+  <h1>Welcome to SmartDeals Hub</h1>
+  <p>Explore useful products, compare your options, and find deals that fit your budget.</p>
+</header>
+
+<input
+  class="search"
+  id="search"
+  type="text"
+  placeholder="Search products..."
+  oninput="searchProducts()"
+>
+
+<div class="container">
+  <div class="products" id="products">
+
+    <div class="card">
+      <div class="emoji">🎧</div>
+      <h2>Headphones & Audio</h2>
+      <p>Discover headphones and accessories for everyday listening.</p>
+      <button onclick="showCategory('Headphones & Audio')">Explore products</button>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🏠</div>
+      <h2>Home Essentials</h2>
+      <p>Find handy items to make your home more comfortable.</p>
+      <button onclick="showCategory('Home Essentials')">Explore products</button>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📱</div>
+      <h2>Phone Accessories</h2>
+      <p>Browse accessories for your phone and everyday tech.</p>
+      <button onclick="showCategory('Phone Accessories')">Explore products</button>
+    </div>
+
+    <div class="card">
+      <div class="emoji">💪</div>
+      <h2>Fitness Finds</h2>
+      <p>Explore equipment and accessories for active living.</p>
+      <button onclick="showCategory('Fitness Finds')">Explore products</button>
+    </div>
+
+  </div>
+  <p id="message" style="text-align:center; font-weight:bold;"></p>
+</div>
+
+<footer>
+  <p>© 2026 SmartDeals Hub. All rights reserved.</p>
+  <p>Smart shopping starts here!</p>
+</footer>
+
+<script>
+function searchProducts() {
+  const query = document.getElementById("search").value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(function(card) {
+    card.style.display = card.innerText.toLowerCase().includes(query)
+      ? "block" : "none";
+  });
+}
+
+function showCategory(category) {
+  document.getElementById("message").textContent =
+    "You selected " + category + "! Product listings are coming soon.";
+}
+</script>
+
 </body>
 </html>
